@@ -1,5 +1,5 @@
-import express, { urlencoded } from 'express';
-import fs from 'fs'
+const express = require('express')
+const urlencoded = require('express')
 const app = express();
 const port = 3000;
 
