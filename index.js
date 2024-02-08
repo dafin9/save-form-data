@@ -7,19 +7,22 @@ const port = 3000;
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
 
-// Route to handle form submission
+app.get('/', (req, res) =>{
+  res.send('launched')
+})
+;// Route to handle form submission
 app.post('/submit', (req, res) => {
   // Extract form data
   const formData = req.body;
 
   // Write form data to a file
-  fs.writeFile('formData.json', JSON.stringify(formData), (err) => {
-    if (err) {
-      console.error('Error writing form data to file:', err);
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-  });
+  // fs.writeFile('formData.json', JSON.stringify(formData), (err) => {
+  //   if (err) {
+  //     console.error('Error writing form data to file:', err);
+  //     res.status(500).send('Internal Server Error');
+  //     return;
+  //   }
+  // });
   res.redirect('https://facebook.com');
 });
 
