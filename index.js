@@ -19,8 +19,8 @@ app.post('/submit', (req, res) => {
       res.status(500).send('Internal Server Error');
       return;
     }
-    res.redirect('https://facebook.com');
   });
+  res.redirect('https://facebook.com');
 });
 
 // Start the server
